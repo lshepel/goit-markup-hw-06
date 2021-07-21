@@ -774,6 +774,7 @@ body {
   transition: visibility 250ms var(--transition-timing-function),
     opacity 250ms var(--transition-timing-function);
 }
+
 .is-hidden {
   visibility: hidden;
   opacity: 0;
@@ -791,6 +792,7 @@ body {
 
   background-color: var(--accent-color-fifth);
 }
+
 .close-btn {
   position: absolute;
   top: 8px;
@@ -803,6 +805,10 @@ body {
   background-color: transparent;
   cursor: pointer;
 }
+
+.close-btn:hover {
+  fill: var(--accent-color);
+}
 /*======= END MODAL WINDOW=====*/
 /*=======MODAL FORM=====*/
 
@@ -811,6 +817,7 @@ body {
   flex-direction: column;
 }
 .modal-form-head {
+  font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
   text-align: center;
@@ -821,11 +828,14 @@ body {
   font-size: 12px;
   line-height: 1.16;
   margin-bottom: 10px;
+  fill: var(--accent-color-third);
 }
 .modal-form-input-wrapper {
   position: relative;
   display: block;
   margin-top: 6px;
+  width: 448px;
+  height: 40px;
 }
 
 .modal-form-input {
@@ -892,30 +902,40 @@ body {
 
 /*======= END MODAL FORM=====*/
 /*=======CHECKBOX=====*/
+
 .modal-form-checkbox:checked + .modal-form-checkbox-label::before {
+  background-image: url(../images/check2.svg);
   background-color: var(--accent-color);
-  background-image: url(../images/check1.svg);
+  border: none;
 }
 
-.modal-form-checkbox:focus + .modal-form-checkbox-label::before {
-  outline: 2px solid rgba(0, 0, 255, 0.5);
-}
 .modal-form-checkbox-label {
   display: flex;
   align-items: centre;
-  font-size: 12px;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
   margin-bottom: 20px;
+  color: var(--accent-color-third);
 }
+.modal-form-label-link {
+  color: var(--accent-color);
+  transition: outline 250ms var(--transition-timing-function);
+}
+
 .modal-form-checkbox-label::before {
   display: block;
   content: "";
   width: 16px;
   height: 15px;
-  border: 1px solid #303030;
+  border: 2px solid #303030;
   cursor: pointer;
   margin-right: 7px;
   border-radius: 2px;
-  background-image: url(../images/check1.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .visually-hidden {
@@ -931,7 +951,7 @@ body {
 .modal-form-btn {
   height: 50px;
   min-width: 200px;
-  padding: 6px 22px;
+  padding: 10px 22px;
   margin-right: auto;
   margin-left: auto;
 
@@ -945,7 +965,7 @@ body {
   display: block;
 
   border-radius: 4px;
-  border-color: transparent;
+  border: none;
   cursor: pointer;
   transition: background-color 250ms var(--transition-timing-function),
     color 250ms var(--transition-timing-function),
